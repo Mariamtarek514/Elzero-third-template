@@ -154,6 +154,7 @@ section:not(.landing) {
     -o-border-radius: 5px;
     width: 500px;
     max-width: 100%;
+    margin: 0;
 }
 
 .popup-box h3 {
