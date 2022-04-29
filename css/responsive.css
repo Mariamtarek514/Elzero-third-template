@@ -54,7 +54,7 @@
         flex-direction: column;
     }
     nav .container .nav-list .mainList > li {
-        margin-top: 3em;
+        margin-top: 10%;
         transition: var(--main-transition);
     }
     nav .container .nav-list .mainList > li:hover {
