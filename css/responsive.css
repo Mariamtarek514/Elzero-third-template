@@ -1,0 +1,253 @@
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/*med screen*/
+@media (min-width: 992px) {
+    .container {
+        width: 95%;
+    }
+}
+/*large screen*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* start nav section */
+@media (max-width: 767px) {
+    nav .container .openMenue {
+        display: block !important;
+        cursor: pointer;
+        font-size: 19px;
+    }
+    nav .container .nav-list {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #2196f3d9;
+        width: 300px;
+        max-width: 100%;
+        height: 100vh;
+        padding: 30px;
+        transform: translateX(100%);
+        transition: var(--main-transition);
+        z-index: 10;
+    }
+    nav .container .collapse {
+        transform: translateX(0) !important;
+    }
+    nav .container .nav-list .closeMenue {
+        background-color: #fff;
+        position: relative;
+        top: 0px;
+        right: -213px;
+        width: fit-content;
+        padding: 6px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+    }
+    nav .container .nav-list .mainList {
+        flex-direction: column;
+    }
+    nav .container .nav-list .mainList > li {
+        margin-top: 3em;
+        transition: var(--main-transition);
+    }
+    nav .container .nav-list .mainList > li:hover {
+        padding-left: 20px;
+    }
+    nav .container .nav-list .mainList > li a {
+        color: #fff;
+        font-size: 18px;
+    }
+    nav .container .nav-list .mainList > li a:hover {
+        color: #fff;
+        background-color: transparent;
+    }
+    nav .container .nav-list .mainList > li a::before {
+        display: none;
+    }
+    nav .container .nav-list .mainList .branch-list .list {
+        gap: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        max-width: 100%;
+        height: 100vh;
+        background-color: #2196f3;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: var(--main-transition);
+        text-align: unset;
+        align-items: unset;
+    }
+    nav .container .nav-list .mainList .branch-list .sub-list {
+        transform: translateX(0);
+        overflow-x: hidden;
+        overflow-y: unset;
+    }
+    nav .container .nav-list .mainList .branch-list .list > i {
+        display: block;
+        top: 25px;
+    }
+    nav .nav-list .mainList .branch-list .list figure img {
+        width: 125px;
+    }
+    nav .nav-list .mainList .branch-list .list .links {
+        flex: 0;
+    }
+    nav .nav-list .mainList .branch-list .list .links li::before {
+        display: none;
+    }
+    nav .nav-list .mainList .branch-list .list .links > li:not(:last-child) {
+        border-bottom: none;
+    }
+    nav .nav-list .mainList .branch-list .list .links li a {
+        color: #fff;
+        font-weight: normal;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    nav .nav-list .mainList .branch-list .list figure {
+        display: none;
+    }
+}
+
+/* end nav section */
+/* start landing section */
+@media (max-width: 991px) {
+    .landing .container .conent {
+        text-align: center;
+    }
+    .landing .container .conent h1 {
+        font-size: 40px;
+    }
+    .landing .container .conent p {
+        margin: 10px auto;
+    }
+    .landing .container figure {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .landing .container .conent h1 {
+        font-size: 28px;
+    }
+    .landing .container .conent p {
+        font-size: 18px;
+    }
+}
+
+/* end landing section */
+/* start services section */
+@media (max-width: 991px) {
+    .our-skills .container img {
+        display: none;
+    }
+}
+/* end services section */
+/* start work-steps secion */
+@media (max-width: 991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+    .work-steps .container > img {
+        margin: 0 0 50px;
+    }
+}
+@media (max-width: 495px) {
+    .work__container .box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .work__container .box img {
+        margin: 0 0 30px;
+    }
+}
+/* end work-steps secion */
+/* start event section */
+@media (max-width: 991px) {
+    .events .container img {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .events .subscribe form {
+        max-width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+    .events .subscribe form input[type="email"] {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+    .events .subscribe form input[type="submit"] {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+}
+/* end event section */
+/* start pricing plane secion */
+
+@media (min-width: 1200px) {
+    .popular {
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+        position: relative;
+    }
+}
+/* end pricing plane secion */
+/* start top video section */
+@media (max-width: 991px) {
+    .video .video__container {
+        flex-direction: column;
+    }
+}
+/* end top video section */
+
+/* start discount section */
+@media (min-width: 992px) {
+    .discount .discount_content,
+    .discount .form {
+        flex-basis: 50%;
+    }
+}
+/* end discount section */
+/* start footer section */
+@media (max-width: 586px) {
+    footer {
+        text-align: center;
+    }
+    footer .social_info ul {
+        justify-content: center;
+    }
+    footer .address .row {
+        flex-direction: column;
+    }
+    footer .address .row i {
+        margin: 0 0 10px 0;
+    }
+}
+/* end footer section */

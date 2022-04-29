@@ -1,0 +1,291 @@
+* {
+    list-style-type: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+    --p-color: #777;
+    --text-color: #b9b9b9;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+    font-family: "Cairo", sans-serif;
+    counter-reset: services;
+    margin: 0;
+}
+/* scroll button */
+.arrow {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--main-color);
+    color: #fff;
+    width: fit-content;
+    padding: 9px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    z-index: 15;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+/* end scroll button */
+section:nth-of-type(even) {
+    background-color: var(--section-background);
+}
+section:not(.landing) {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-title {
+    margin: 0 auto 80px;
+    border: 2px solid #000;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.main-title::after,
+.main-title::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::after {
+    right: -30px;
+}
+.main-title::before {
+    left: -30px;
+}
+.main-title:hover::before {
+    z-index: -1;
+    animation: left-fill 0.5s linear forwards;
+}
+.main-title:hover::after {
+    z-index: -1;
+    animation: right-fill 0.5s linear forwards;
+}
+.main-title:hover {
+    color: #fff;
+    border: 2px solid #fff;
+    transition-delay: 0.5s;
+}
+
+.article .content,
+.gallery .content,
+.features .content,
+.testimonials .testimonials__container,
+.team .container,
+.servisces .container,
+.price .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+/* dots background */
+.dots {
+    background: url("../images/dots.png") no-repeat;
+    width: 204px;
+    height: 186px;
+    position: absolute;
+}
+.dots-up {
+    top: 100px;
+    right: 0px;
+}
+.dots-down {
+    bottom: 100px;
+    left: 0px;
+}
+/* start popup for gallery section */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 /80%);
+    z-index: 1000;
+    overflow: hidden;
+}
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: 500px;
+    max-width: 100%;
+}
+
+.popup-box h3 {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 auto 20px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+.popup-box img {
+    max-width: 100%;
+}
+.close-btn {
+    position: absolute;
+    background-color: var(--main-color);
+    color: #fff;
+    top: -5px;
+    right: -5px;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+/* end popup for gallery section */
+/* start spikes  */
+.spikes {
+    position: relative;
+}
+.spikes::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    right: 0;
+    height: 20px;
+    z-index: 1;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, #fff 25%, transparent 25%),
+        linear-gradient(225deg, #fff 25%, transparent 25%);
+}
+/* end spikes  */
+/* animation */
+@media (max-width: 1200px) {
+    .dots {
+        display: none;
+    }
+}
+
+/* animation */
+@keyframes upAndDown {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -10px;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes bouncing {
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40%,
+    60% {
+        transform: translateY(-15px);
+    }
+}
+@keyframes left-fill {
+    50% {
+        width: 12px;
+        height: 12px;
+
+        left: 0;
+    }
+    100% {
+        border-radius: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+@keyframes right-fill {
+    50% {
+        width: 12px;
+        height: 12px;
+        right: 0;
+    }
+    100% {
+        border-radius: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+@keyframes shaking-arrow {
+    100% {
+        transform: translateX(10px);
+    }
+}
+/* at gallery section */
+@keyframes flash {
+    0%,
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+}
+
+/* animation in discount secion */
+@keyframes change-background {
+    0%,
+    100% {
+        background-image: url("../images/discount-background1.jpg");
+    }
+    50% {
+        background-image: url("../images/discount-background2.jpg");
+    }
+}
