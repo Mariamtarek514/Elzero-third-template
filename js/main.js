@@ -2,8 +2,8 @@
 window.addEventListener("scroll", () => {
     let topArrow = document.querySelector(".arrow");
     if (
-        document.body.scrollTop > 70 ||
-        document.documentElement.scrollTop > 70
+        document.body.scrollTop > 600 ||
+        document.documentElement.scrollTop > 600
     ) {
         topArrow.style.display = "block";
         topArrow.onclick = () => {
@@ -57,21 +57,22 @@ mainList.forEach((a) => {
 });
 
 // start sublinks
-let subLink = document.getElementsByClassName("open-sub-link")[0];
 let subMenue = document.getElementsByClassName("list")[0];
-let closeSub = document.getElementById("close-sub");
-subLink.addEventListener("click", () => {
-    subMenue.classList.toggle("sub-list");
-});
-closeSub.addEventListener("click", () => {
-    subMenue.classList.remove("sub-list");
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("open-sub-link")) {
+        subMenue.classList.toggle("sub-list");
+    } else {
+        subMenue.classList.remove("sub-list");
+    }
 });
 window.addEventListener("scroll", () => {
     if (
-        document.documentElement.scrollTop > 70 ||
-        document.body.scrollTop > 70
+        document.documentElement.scrollTop > 300 ||
+        document.body.scrollTop > 300
     ) {
         subMenue.classList.remove("sub-list");
+        container.classList.remove("collapse");
+        openMenue.style.cssText = "opacity:1";
     }
 });
 // start gallery section
